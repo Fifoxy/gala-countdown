@@ -1,0 +1,65 @@
+@font-face {
+    font-family: "Gala";
+    src: url('../Park Lane NF.ttf');
+}
+
+body {
+    background-color:#000;
+    color:white;
+    font-size:350%;
+    overflow:hidden;
+}
+
+#hour{
+    text-align:center;
+}
+
+#day{
+    margin:auto;
+    display:block;
+}
+
+table {
+    margin:auto;
+    margin-top:20px;
+}
+
+h1{
+    font-family: "Gala";
+    display:inline;
+    color:#FAB03D;
+}
+
+h5{
+    color:white;
+    font-family: "Gala";
+    margin:auto;
+    text-align:center;
+    display:block;
+}
+
+#typing{
+    font-family: "Gala";
+    color:white;
+    font-size:70%;
+}
+
+td{
+
+    padding:20px;
+}
+
+h3{
+    color:white;
+    font-size:70%;
+    display:inline;
+    font-family: "Gala";
+}
+
+#logo{
+    display:block;
+    margin:auto;
+    width:298px;
+    height:400px;
+}
+
