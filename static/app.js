@@ -20,6 +20,14 @@ var Countdown = React.createClass({displayName: "Countdown",
     var now = moment();
 
     var left = countdown.apply(null, [moment().toDate(), moment('2016-02-26 20:00:00').toDate()]);
+
+    if(left.minutes < 10){
+        left.minutes = "0" + left.minutes;
+    }
+     if(left.seconds < 10){
+        left.seconds = "0" + left.seconds;
+    }
+
     this.setState({
       days: left.days,
       hours: left.hours,
@@ -39,13 +47,17 @@ var Countdown = React.createClass({displayName: "Countdown",
       loop: true
     }).type('19h30').pause().delete()
       .type('Halls de la Filature').pause().delete()
-      .type('Réservez votre place !').pause().delete();
+      .type('Réservez votre place !').pause().delete()
+      .type('www.gala-isen.fr').pause().delete();
   },
 
+/*   <div class="small-6 large-2 columns">test</div>
+   <div class="small-6 large-8 columns">lol</div>
+   <div class="small-12 large-2 columns">ok</div>*/
   render: function() {
     return (
-      React.createElement("div", {id: "header"}, 
-        React.createElement("img", {id: "logo", src: "static/img/logo.svg"}), React.createElement("br", null), 
+      React.createElement("div", {className: "small-6 large-8 columns", id: "header"}, 
+        React.createElement("img", {id: "logo", src: "static/img/logo.png"}), React.createElement("br", null), 
         React.createElement("h5", null, "26 Février 2016"), 
         React.createElement("center", null, " ", React.createElement("span", {id: "typing", ref: "typing"}), " "), React.createElement("br", null), 
         React.createElement("center", null, React.createElement("span", {id: "day"}, React.createElement("h1", null, this.state.days), React.createElement("h3", null, "Jours"))), 
@@ -2903,7 +2915,7 @@ module.exports = warning;
 
 },{}],32:[function(require,module,exports){
 //! moment.js
-//! version : 2.11.1
+//! version : 2.11.2
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -4720,7 +4732,7 @@ module.exports = warning;
     }
 
     // ASP.NET json date format regex
-    var aspNetRegex = /(\-)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)\.?(\d{3})?)?/;
+    var aspNetRegex = /^(\-)?(?:(\d*)[. ])?(\d+)\:(\d+)(?:\:(\d+)\.?(\d{3})?\d*)?$/;
 
     // from http://docs.closure-library.googlecode.com/git/closure_goog_date_date.js.source.html
     // somewhat more in line with 4.4.3.2 2004 spec, but allows decimal anywhere
@@ -6475,7 +6487,7 @@ module.exports = warning;
     // Side effect imports
 
 
-    utils_hooks__hooks.version = '2.11.1';
+    utils_hooks__hooks.version = '2.11.2';
 
     setHookCallback(local__createLocal);
 

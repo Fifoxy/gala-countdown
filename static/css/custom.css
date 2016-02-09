@@ -5,6 +5,7 @@
 
 body {
     background-color:#000;
+    background-image:url('../img/background.png');
     color:white;
     font-size:350%;
     overflow:hidden;
@@ -27,7 +28,7 @@ table {
 h1{
     font-family: "Gala";
     display:inline;
-    color:#FAB03D;
+    color:#c2aa77;
 }
 
 h5{
@@ -62,4 +63,3 @@ h3{
     width:298px;
     height:400px;
 }
-

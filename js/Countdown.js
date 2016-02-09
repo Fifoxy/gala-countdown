@@ -19,6 +19,14 @@ var Countdown = React.createClass({
     var now = moment();
 
     var left = countdown.apply(null, [moment().toDate(), moment('2016-02-26 20:00:00').toDate()]);
+
+    if(left.minutes < 10){
+        left.minutes = "0" + left.minutes;
+    }
+     if(left.seconds < 10){
+        left.seconds = "0" + left.seconds;
+    }
+
     this.setState({
       days: left.days,
       hours: left.hours,
@@ -38,13 +46,17 @@ var Countdown = React.createClass({
       loop: true
     }).type('19h30').pause().delete()
       .type('Halls de la Filature').pause().delete()
-      .type('Réservez votre place !').pause().delete();
+      .type('Réservez votre place !').pause().delete()
+      .type('www.gala-isen.fr').pause().delete();
   },
 
+/*   <div class="small-6 large-2 columns">test</div>
+   <div class="small-6 large-8 columns">lol</div>
+   <div class="small-12 large-2 columns">ok</div>*/
   render: function() {
     return (
-      <div id="header">
-        <img id="logo" src="static/img/logo.svg"/><br/>
+      <div className="small-6 large-8 columns" id="header">
+        <img id="logo" src="static/img/logo.png"/><br/>
         <h5>26 Février 2016</h5>
         <center>&nbsp;<span id="typing" ref="typing"></span>&nbsp;</center><br/>
         <center><span id="day"><h1>{this.state.days}</h1><h3>Jours</h3></span></center>
