@@ -59,7 +59,7 @@ var Countdown = React.createClass({
         <img id="logo" src="static/img/logo.png"/><br/>
         <h5>26 Février 2016</h5>
         <center>&nbsp;<span id="typing" ref="typing"></span>&nbsp;</center><br/>
-        <center><span id="day"><h1>{this.state.days}</h1><h3>Jours</h3></span></center>
+        <center><span id="day"><h1>{this.state.days}</h1> <h3>Jours</h3></span></center>
         <table>
           <tbody>
             <tr>
