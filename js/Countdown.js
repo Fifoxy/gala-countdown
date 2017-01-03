@@ -16,9 +16,8 @@ var Countdown = React.createClass({
 
   refresh: function() {
     moment().format();
-    var now = moment();
 
-    var left = countdown.apply(null, [moment().toDate(), moment('2016-02-26 20:00:00').toDate()]);
+    var left = countdown.apply(null, [moment().toDate(), moment('2017-02-03 20:30:00').toDate()]);
 
     if(left.minutes < 10){
         left.minutes = "0" + left.minutes;
@@ -44,40 +43,20 @@ var Countdown = React.createClass({
       deleteSpeed: 50,
       pauseDelay: 5000,
       loop: true
-    }).type('19h30').pause().delete()
+    }).type('20h30').pause().delete()
       .type('Halls de la Filature').pause().delete()
       .type('Réservez votre place !').pause().delete()
       .type('www.gala-isen.fr').pause().delete();
   },
 
-/*   <div class="small-6 large-2 columns">test</div>
-   <div class="small-6 large-8 columns">lol</div>
-   <div class="small-12 large-2 columns">ok</div>*/
   render: function() {
     return (
       <div className="small-6 large-8 columns" id="header">
-        <img id="logo" src="static/img/logo.png"/><br/>
-        <h5>26 Février 2016</h5>
+        <img id="logo" src="static/img/logo.png"/>
+        <img id="logo_hover" src="static/img/logo_hover.png"/><br/>
+        <span id="day"><h1>J-{this.state.days}</h1></span>
         <center>&nbsp;<span id="typing" ref="typing"></span>&nbsp;</center><br/>
-        <center><span id="day"><h1>{this.state.days}</h1> <h3>Jours</h3></span></center>
-        <table>
-          <tbody>
-            <tr>
-              <td><h1>{this.state.hours}</h1></td>
-              <td><h1 style={{color: 'white'}}> : </h1></td>
-              <td><h1>{this.state.minutes}</h1></td>
-              <td> <h1 style={{color: 'white'}}> : </h1></td>
-              <td><h1>{this.state.seconds}</h1></td>
-            </tr>
-            <tr>
-              <td><h3>Heures</h3></td>
-              <td><h3></h3></td>
-              <td><h3>Minutes</h3></td>
-              <td><h3></h3></td>
-              <td><h3>Secondes</h3></td>
-            </tr>
-          </tbody>
-        </table>
+        <center><img src="static/img/arrow.png"/></center>
       </div>
     );
   }

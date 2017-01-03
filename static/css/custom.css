@@ -1,10 +1,18 @@
 @font-face {
     font-family: "Gala";
-    src: url('../Park Lane NF.ttf');
+    src: url('../Lato-Regular.ttf');
+}
+
+@-webkit-keyframes rotate {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 body {
-    background-color:#000;
     background-image:url('../img/background.png');
     color:white;
     font-size:350%;
@@ -16,8 +24,9 @@ body {
 }
 
 #day{
-    margin:auto;
-    display:block;
+    position:absolute;
+    left:785px;
+    top:160px;
 }
 
 table {
@@ -26,23 +35,24 @@ table {
 }
 
 h1{
+    position:absolute;
     font-family: "Gala";
-    display:inline;
-    color:#c2aa77;
+    color:#E6D458;
+    font-size:11rem;
 }
 
-h5{
-    color:white;
+h2{
+    position:absolute;
+    top:200px;
+    color:#E6D458;
     font-family: "Gala";
-    margin:auto;
+    margin-left:650px;
     text-align:center;
-    display:block;
 }
 
 #typing{
     font-family: "Gala";
     color:white;
-    font-size:70%;
 }
 
 td{
@@ -52,14 +62,24 @@ td{
 
 h3{
     color:white;
-    font-size:70%;
-    display:inline;
     font-family: "Gala";
+    display:inline;
 }
 
 #logo{
-    display:block;
-    margin:auto;
-    width:298px;
-    height:400px;
+    position:relative;
+    margin-left:525px;
+    width:800px;
+    -webkit-animation-name:             rotate;
+    -webkit-animation-duration:         30s;
+    -webkit-animation-iteration-count:  infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+#logo_hover
+{
+    position:absolute;
+    top:500px;
+    width:450px;
+    right:750px;
 }
